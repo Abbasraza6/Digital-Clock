@@ -2,11 +2,15 @@ var hrs_span = document.getElementById("hrs_span");
 var mins_span = document.getElementById("mins_span");
 var secs_span = document.getElementById("secs_span");
 var ampm_span = document.getElementById("ampm_span");
+var day_span = document.getElementById("day_span");
+
+var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 function digitalClockHandle (){
 
     var currentDate = new Date()
     var hours = currentDate.getHours();
+    day_span.innerText = days[currentDate.getDay()];
     var am_pm = '';
     if(hours == 0){
         am_pm = 'am';
